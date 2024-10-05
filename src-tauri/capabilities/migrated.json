@@ -1,0 +1,20 @@
+{
+  "identifier": "migrated",
+  "description": "permissions that were migrated from v1",
+  "local": true,
+  "windows": ["main"],
+  "permissions": [
+    "fs:scope-video-recursive",
+    "fs:default",
+    "fs:allow-video-write-recursive",
+    "fs:allow-open",
+    "fs:allow-stat",
+    "core:event:allow-listen",
+    "core:event:allow-emit-to",
+    "core:event:allow-unlisten",
+    {
+      "identifier": "fs:allow-open",
+      "allow": [{ "path": "$VIDEO/*" }]
+    }
+  ]
+}

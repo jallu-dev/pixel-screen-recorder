@@ -1,0 +1,30 @@
+[package]
+name = "screen-recorder"
+version = "0.1.0"
+description = "A Tauri App"
+authors = ["you"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[package.metadata]
+windows_subsystem = "windows" # Moved under package.metadata
+
+[build-dependencies]
+tauri-build = { version = "2.0.0-rc", features = [] }
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tauri = { version = "2.0.0-rc", features = ["protocol-asset"] } # Check if protocol-asset is needed
+lazy_static = "1.4"
+chrono = "0.4"
+gtk = "0.18"
+tauri-plugin-fs = "2.0.0-rc"
+tauri-plugin-dialog = "2.0.0-rc"
+tokio = { version = "1.40.0", features = ["full"] }
+regex = "1.11.0"
+
+[features]
+# This feature is used for production builds or when a dev server is not specified, DO NOT REMOVE!!
+custom-protocol = ["tauri/custom-protocol"]
